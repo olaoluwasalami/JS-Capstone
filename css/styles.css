@@ -1,0 +1,55 @@
+body {
+    background: url("../img/football.jpg") no-repeat center fixed ;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+
+ h1 {
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+    
+ }
+
+  h3 {  padding-top: 3%;
+        padding-left: 3%;
+        color: white
+
+    }
+
+    /* input {
+    visibility:hidden;
+}
+
+label {
+    cursor: pointer;
+} */
+
+.quiz-section {
+    /* margin: auto; */
+    text-align: center;
+   
+
+}
+
+.question-number{
+       margin-top: 2%;
+    font-size: 140%;
+    }
+
+.question-question{
+    font-size: 170%;
+    font-weight: bold;
+}
+
+.question-options{
+   
+    font-size: 150%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.w-100{
+    margin: 10px;
+}
