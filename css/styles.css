@@ -19,13 +19,26 @@ body {
 
     }
 
-    /* input {
-    visibility:hidden;
+    .test{
+       background-color: greenyellow;
+       color: green;
+       margin: 10px;
+   
+
+    }
+
+   img.animated-gif{
+  width: 50%;
+  height: 50%;
 }
 
-label {
-    cursor: pointer;
-} */
+.score{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 180%;
+    color: forestgreen;
+    background-color: black;
+
+}
 
 .quiz-section {
     /* margin: auto; */
