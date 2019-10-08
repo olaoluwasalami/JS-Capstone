@@ -1,3 +1,4 @@
+
 body {
     background: url("../img/football.jpg") no-repeat center fixed ;
     -moz-background-size: cover;
@@ -65,4 +66,38 @@ body {
 
 .w-100{
     margin: 10px;
+}
+
+.box{
+color: greenyellow;
+padding-left: 10px;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:15px;
+    
+    -webkit-appearance:button;
+
+    border: double 2px white;
+
+    background-color: greenyellow;
+    color:#FFF;
+    white-space: nowrap;
+    overflow:hidden;
+
+    width:20px;
+    height:20px;
+}
+
+input[type=checkbox]:checked {
+    background-color:#000;
+    border-left-color:#06F;
+    border-right-color:#06F;
+}
+
+input[type=checkbox]:hover {
+    box-shadow:0px 0px 10px red;
 }

@@ -11,6 +11,24 @@ const gradeQuestion = (ans) => {
   questionIndex += 1;
 };
 
+
+const startQuiz = () => {
+   $('.question-number').text('');
+  $('.question-question').text('');
+  $('.option1').text('');
+  $('.option2').text('');
+  $('.option3').text('');
+  $('.option4').text('');
+  $('<p>Do you know Football? Challenge yourself</p>').appendTo('.question-question');
+  let start = $('<input type="button" class="test" name="oo"  value="Click here"/>');
+  start.appendTo('.question-question');
+  $(".question-question input:button[class='test']").click(function () {
+    renderQuestion(questionIndex);
+   
+
+});
+}  
+
 const renderSuccess = () => {
   $('.question-number').text('');
   $('.question-question').text('');
@@ -19,7 +37,7 @@ const renderSuccess = () => {
   $('.option3').text('');
   $('.option4').text('');
   $(`h1`).remove();
-  let points = $(`<span class="score" ></span>`);
+   let points = $(`<span class="score" ></span>`);
 
   if (score >= 50) {
     points.text(`Score : ${score}%`).appendTo('.question-question');
@@ -44,18 +62,18 @@ const renderQuestion = (qIndex) => {
   $('.option2').text('');
   $('.option3').text('');
   $('.option4').text('');
-  $('.question-number').text('Question ' + (qIndex + 1));
-  // get question-question and populate with quesion
+   $('.question-number').text('Question ' + (qIndex + 1));
+  // get question-question nd populate with quesion
   $('.question-question').text(question.question);
   // get question-options and populate with options as button
   question.options.forEach((element, i) => {
     let opt = '.option' + (i + 1);
-    let buttonBut = $('<input type="button" class="test" name="answer"  value=' + element + ' />');
-    let buttonLabel = $('<label for=' +element+ '>'  +'</label>');
-    buttonBut.appendTo(opt);
-    buttonLabel.appendTo(opt);
+    let checkBut = $('<input type="checkbox" name="answer"  value=' + element + ' />');
+    let checkLabel = $('<label class="box" for=' +element+ ' >' + element +'</label>');
+    checkBut.appendTo(opt);
+    checkLabel.appendTo(opt);
   });
-  $(".question-options input:button[name='answer']").click(function () {
+  $(".question-options input:checkbox[name='answer']").click(function () {
     if (questionIndex == (selectQuestions.length - 1)) {
       gradeQuestion(this.value)
       renderSuccess()
@@ -66,8 +84,6 @@ const renderQuestion = (qIndex) => {
   });
 };
 
-
-
 $(document).ready(function () {
-  renderQuestion(questionIndex);
+  startQuiz();
 });
