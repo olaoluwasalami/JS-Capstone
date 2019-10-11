@@ -20,7 +20,7 @@ const startQuiz = () => {
   $('.option3').text('');
   $('.option4').text('');
   $('<p>Do you know Football? Challenge yourself</p>').appendTo('.question-question');
-  let start = $('<input type="button" class="test" name="oo"  value="Click here"/>');
+  let start = $('<input type="button" class="test"  value="Click here"/>');
   start.appendTo('.question-question');
   $(".question-question input:button[class='test']").click(function () {
     renderQuestion(questionIndex);
@@ -36,17 +36,23 @@ const renderSuccess = () => {
   $('.option2').text('');
   $('.option3').text('');
   $('.option4').text('');
+  $('.retry').text('');
   $(`h1`).remove();
-   let points = $(`<span class="score" ></span>`);
+  let points = $(`<span class="score" ></span>`);
+  $(`<input type="button" value="Play Again?" class ="load"/>`).appendTo('.retry');
+  $(".load").click(function () {
+    location.reload(true); //loads from server
 
+  });
+ 
   if (score >= 50) {
     points.text(`Score : ${score}%`).appendTo('.question-question');
     $('<p>You do know football</p>').appendTo('.question-question');
-    $('<img class="animated-gif" src="https://media.giphy.com/media/xT8qBoFt9PszavNyeI/giphy.gif">').appendTo('.question-options');
+    $('<img src="https://media.giphy.com/media/xT8qBoFt9PszavNyeI/giphy.gif">').appendTo('.question-options');
   } else {
     points.text(`Score: ${score}%`).appendTo('.question-question');
     $( '<p>You can do better!</p>').appendTo('.question-question');
-    $('<img class="animated-gif" src="https://media.giphy.com/media/uO8Mn35ytbHm8/giphy.gif">').appendTo('.question-options');
+    $('<img src="https://media.giphy.com/media/uO8Mn35ytbHm8/giphy.gif">').appendTo('.question-options');
   }
 
 
